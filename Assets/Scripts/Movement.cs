@@ -79,13 +79,15 @@ public class Movement : MonoBehaviour
     }
 
     public void SetInputVector(Vector2 inputVector)
-    {
+    {   
+        // Sets input from CarInput.cs
         steeringInput = inputVector.x;
         accelerationInput = inputVector.y;
     }
 
     void killOrthogonalVelocity()
-    {
+    {   
+        // Used to make drifting smoother 
         Vector2 forwardVelocity = transform.up * Vector2.Dot(rb.linearVelocity, transform.up);
         Vector2 rightVelocity = transform.right * Vector2.Dot(rb.linearVelocity, transform.right);
 
