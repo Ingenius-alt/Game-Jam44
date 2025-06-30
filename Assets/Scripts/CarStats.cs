@@ -20,6 +20,7 @@ public class CarStats : MonoBehaviour
     [SerializeField] GameObject[] Respawn;
     [SerializeField] AudioClip[] audioClips;
     [SerializeField] AudioSource audiosfx;
+    [SerializeField] GameObject[] storeB;
     private int indexClip;
     private float tireD = 100.0f;
     private float engineD = 75.0f;
@@ -38,6 +39,8 @@ public class CarStats : MonoBehaviour
     {
         carMovement = GetComponent<Movement>();
         indexClip = 0;
+        Restart();
+        GasCanD = 0;
     }
 
     void Update()
@@ -59,8 +62,8 @@ public class CarStats : MonoBehaviour
             GetComponent<CarInput>().enabled = false;
             timer2 -= waitTimeBetweenStall;
             audiosfx.clip = audioClips[10];
-                audiosfx.Play();
-            
+            audiosfx.Play();
+
         }
         if (timer2 > waitTimeBetweenStall / 4 && !GetComponent<CarInput>().enabled && !store.activeSelf)
         {
@@ -81,9 +84,9 @@ public class CarStats : MonoBehaviour
             }
             if (indexClip == 1)
             {
-                GetComponent<AudioSource>().clip = audioClips[0+loudUpgrade+otherRoute];
+                GetComponent<AudioSource>().clip = audioClips[0 + (loudUpgrade - 1) + otherRoute];
                 GetComponent<AudioSource>().Play();
-                indexClip = 0 + loudUpgrade + otherRoute;
+                indexClip = 0 + (loudUpgrade - 1) + otherRoute;
             }
             else
             {
@@ -97,6 +100,7 @@ public class CarStats : MonoBehaviour
             gameOver.SetActive(true);
             Time.timeScale = 0;
         }
+        goldText.GetComponent<TMP_Text>().text = money.ToString();
     }
 
     void updateGas()
@@ -143,43 +147,63 @@ public class CarStats : MonoBehaviour
             Time.timeScale = 0;
         }
         money += 20 * loudUpgrade;
-        goldText.GetComponent<TMP_Text>().text = money.ToString();
         //money sound
         audiosfx.clip = audioClips[6];
         audiosfx.Play();
     }
 
-    public void upgrade(int i, GameObject button)
+    public void upgrade(int i)
     {
         switch (i)
         {
             case 0:
-                engineD = 100f;
-                audiosfx.clip = audioClips[9];
-                audiosfx.Play();
+                if (money >= 300)
+                {
+                    engineD = 100f;
+                    audiosfx.clip = audioClips[9];
+                    audiosfx.Play();
+                    money -= 300;
+                }
                 break;
             case 1:
-                tireD = 100f;
-                audiosfx.clip = audioClips[9];
-                audiosfx.Play();
+                if (money >= 50)
+                {
+                    tireD = 100f;
+                    audiosfx.clip = audioClips[9];
+                    audiosfx.Play();
+                    money -= 50;
+                }
+                
                 break;
             case 2:
-                button.SetActive(false);
-                steerUpgrade = 0.5f;
-                audiosfx.clip = audioClips[9];
-                audiosfx.Play();
+                if (money >= 150)
+                {
+                    storeB[2].SetActive(false);
+                    steerUpgrade = 0.5f;
+                    audiosfx.clip = audioClips[9];
+                    audiosfx.Play();
+                    money -= 150;
+                }
                 break;
             case 3:
-                button.SetActive(false);
-                GasDrainperSecond = 1f;
-                audiosfx.clip = audioClips[9];
-                audiosfx.Play();
+                if (money >= 200)
+                {
+                    storeB[3].SetActive(false);
+                    GasDrainperSecond = 1f;
+                    audiosfx.clip = audioClips[9];
+                    audiosfx.Play();
+                    money -= 200;
+                }
                 break;
             case 4:
-                button.SetActive(false);
-                loudUpgrade = 2;
-                audiosfx.clip = audioClips[9];
-                audiosfx.Play();
+                if (money >= 200)
+                {
+                    storeB[4].SetActive(false);
+                    loudUpgrade = 2;
+                    audiosfx.clip = audioClips[9];
+                    audiosfx.Play();
+                    money -= 200;
+                }
                 break;
             default:
                 break;
@@ -189,7 +213,6 @@ public class CarStats : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1;
-        gameOver.SetActive(false);
         for (int i = 0; i < Respawn.Length; i++)
         {
             Respawn[i].SetActive(true);
@@ -203,6 +226,9 @@ public class CarStats : MonoBehaviour
         {
             otherRoute = 0;
         }
+        GasCanD -= 10f;
+        objFul = 0;
+        gameOver.SetActive(false);
     }
 
     public void goMain()

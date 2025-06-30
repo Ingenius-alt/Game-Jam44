@@ -2148,7 +2148,7 @@ GameObject:
   - component: {fileID: 333715877}
   - component: {fileID: 333715876}
   m_Layer: 5
-  m_Name: Button
+  m_Name: EngineRepair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2217,7 +2217,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 333715877}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1638469486}
+        m_TargetAssemblyTypeName: CarStats, Assembly-CSharp
+        m_MethodName: upgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &333715877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4651,7 +4663,7 @@ GameObject:
   - component: {fileID: 890572509}
   - component: {fileID: 890572508}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: PowerSteering
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4720,7 +4732,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 890572509}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1638469486}
+        m_TargetAssemblyTypeName: CarStats, Assembly-CSharp
+        m_MethodName: upgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &890572509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5203,7 +5227,7 @@ GameObject:
   - component: {fileID: 937633808}
   - component: {fileID: 937633807}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: LoudSpeakerReplacenent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5272,7 +5296,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 937633808}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1638469486}
+        m_TargetAssemblyTypeName: CarStats, Assembly-CSharp
+        m_MethodName: upgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &937633808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6853,7 +6889,7 @@ GameObject:
   - component: {fileID: 1247326388}
   - component: {fileID: 1247326387}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: GasTankRepair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6922,7 +6958,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1247326388}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1638469486}
+        m_TargetAssemblyTypeName: CarStats, Assembly-CSharp
+        m_MethodName: upgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1247326388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7265,7 +7313,7 @@ GameObject:
   - component: {fileID: 1386815005}
   - component: {fileID: 1386815004}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: TireRepair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7334,7 +7382,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1386815005}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1638469486}
+        m_TargetAssemblyTypeName: CarStats, Assembly-CSharp
+        m_MethodName: upgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1386815005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9308,6 +9368,16 @@ MonoBehaviour:
   - {fileID: 1670753359}
   - {fileID: 1616663762}
   - {fileID: 228171642}
+  - {fileID: 1041303329}
+  - {fileID: 1480289848}
+  - {fileID: 343878393}
+  - {fileID: 1172229309}
+  - {fileID: 188591664}
+  - {fileID: 242765312}
+  - {fileID: 1229129329}
+  - {fileID: 761036340}
+  - {fileID: 1397408078}
+  - {fileID: 2065141108}
   - {fileID: 1495013357}
   - {fileID: 1185421360}
   - {fileID: 1868672226}
@@ -9337,17 +9407,6 @@ MonoBehaviour:
   - {fileID: 929105972}
   - {fileID: 262288341}
   - {fileID: 73742278}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   audioClips:
   - {fileID: 8300000, guid: 2dc71c22648e3294fbb0055e976a0479, type: 3}
   - {fileID: 8300000, guid: eee0e51232906a54f8cf7f6205dcebfc, type: 3}
@@ -9361,6 +9420,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ed6653df8df6b154c808d2bd11824d07, type: 3}
   - {fileID: 8300000, guid: 4c563afce5dba4244b08a143ea0c3691, type: 3}
   audiosfx: {fileID: 1638469488}
+  storeB:
+  - {fileID: 333715874}
+  - {fileID: 1386815002}
+  - {fileID: 890572506}
+  - {fileID: 1247326385}
+  - {fileID: 937633805}
 --- !u!82 &1638469487
 AudioSource:
   m_ObjectHideFlags: 0
